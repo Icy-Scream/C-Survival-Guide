@@ -9,16 +9,25 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int _damageValue;
     [SerializeField] private bool _playerDead = false;
 
+    [SerializeField] private Vector3[] _SpawnPos;
+
+    [SerializeField] private int _numberofSpawns;
+
+    [SerializeField] private bool _playerSpawn = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _SpawnPos = new Vector3[5];
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+        GenerateRandomSpawns();
+        GetRandomSpawn();
+        PlayerSpawnPOS();
         CheckPlayerStatus();
         AttackPlayer();   
     }
@@ -56,6 +65,42 @@ private bool CheckPlayerStatus()
     return _playerDead = false;
   }
   else return _playerDead = true;
+}
+
+private void GenerateRandomSpawns()
+{
+ if(Input.GetKeyDown(KeyCode.Q))
+    {
+          _numberofSpawns = _SpawnPos.Length;
+          for(int i = 0; i <= _numberofSpawns; i++)
+          {
+           _SpawnPos[i].Set(Random.value, Random.value,Random.value);  
+          } 
+    }
+
+    
+   else if(!_playerSpawn)
+   {
+    gameObject.transform.position = new Vector3(Random.value,Random.value,Random.value);
+    _playerSpawn = true;
+   } 
+}
+    
+
+    
+
+private Vector3 GetRandomSpawn()
+{
+    int random = Random.Range(0,_numberofSpawns);
+    return _SpawnPos[random];
+}
+
+private void PlayerSpawnPOS()
+{
+ if(Input.GetKeyDown(KeyCode.W))
+ {
+    gameObject.transform.position = GetRandomSpawn();
+ }
 }
 
 }
