@@ -155,12 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4d346b5c6bc1d49858f4c4a3c11379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: 150
-  _damageValue: 25
-  _playerDead: 0
-  _SpawnPos: []
-  _numberofSpawns: 0
-  _playerSpawn: 0
 --- !u!65 &208256403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -271,12 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4d346b5c6bc1d49858f4c4a3c11379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: 150
-  _damageValue: 25
-  _playerDead: 0
-  _SpawnPos: []
-  _numberofSpawns: 0
-  _playerSpawn: 0
 --- !u!65 &660656674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -449,6 +437,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &913411209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 913411211}
+  - component: {fileID: 913411212}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &913411211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913411209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.98884237, y: 1.1108847, z: 2.175879}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &913411212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913411209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e78a2f67e89a343baf83e19579d5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _names:
+  - Joshua
+  - Ka'iolani
+  - Makani
+  - Benjamin
+  - Jesse
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,12 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4d346b5c6bc1d49858f4c4a3c11379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: 150
-  _damageValue: 25
-  _playerDead: 0
-  _SpawnPos: []
-  _numberofSpawns: 0
-  _playerSpawn: 0
 --- !u!65 &1327919294
 BoxCollider:
   m_ObjectHideFlags: 0
