@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class GameManger : MonoBehaviour
 {
-    [SerializeField] private List<string> _names = new List<string>();
-    void Start()
-    {
-        foreach(var name in _names) 
-        { 
-            Debug.Log(name);
-        }
-
-    }
-
-    // Update is called once per frame
+    [SerializeField] private GameObject[] _gameObjects = new GameObject[3];
+    [SerializeField] private List<GameObject> _objectsSpawned = new List<GameObject>();
+    private Vector3 _randomPos;
+    [SerializeField] private int SpawnCount;
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            int _removeName = Random.Range(0, _names.Count);
-            _names.RemoveAt(_removeName);
-            foreach(var name in _names) { Debug.Log(name);}
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        { 
+            _randomPos = new Vector2(Random.Range(-9f, 9f), Random.Range(-9f, 9f));
+            SpawnCount++;
+            
+            if(SpawnCount <= 10) 
+            { 
+                 var _newlySpawned = Instantiate(_gameObjects[Random.Range(0, _gameObjects.Length)], _randomPos, Quaternion.identity) as GameObject;
+                _objectsSpawned.Add(_newlySpawned);
+            }
+            else 
+            { 
+                foreach(var obj in _objectsSpawned) 
+                {
+                    obj.GetComponent<MeshRenderer>().material.color = Color.green;
+                }
+                _objectsSpawned.Clear();
+                SpawnCount = 0;
+            }
+            
         }
+
     }
 }
