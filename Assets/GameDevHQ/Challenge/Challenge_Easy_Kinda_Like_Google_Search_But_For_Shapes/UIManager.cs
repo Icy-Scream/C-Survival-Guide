@@ -6,8 +6,6 @@ using UnityEngine.UI;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] Button _spawnButton;
-    [SerializeField] Button _clearButton;
     [SerializeField] TMP_InputField _InputField;
     public string _userInput { get; private set; }
     public bool _spawn { get; private set; }
